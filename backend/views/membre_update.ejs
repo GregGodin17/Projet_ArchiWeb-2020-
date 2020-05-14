@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>106ième - Saint Dominique</title>
+  </head>
+
+<body class="container"></body>
+      
+    <header>
+        <%- include('./menu.ejs') %>
+    </header>
+    
+    <main> 
+         <h2>Modification des informations :</h2>      
+
+         <hr size="1px">
+
+        <form class="formulaires" action="/membre/update/" method="POST"> 
+          
+            <input name="id_membre" id="id_membre" type="hidden" value="<%= id_membre %>">
+
+            <label >Nom* :</label>
+            <input type="text" name="user_lname" id="user_lname" value="<%= user_lname %>" required>
+
+            <label >Prénom* :</label>
+            <input type="text" name="user_fname" id="user_fname" value="<%= user_fname %>" required>
+
+            <label >Genre* :</label>
+            <select name="user_gender" size="1" required>
+            <option value="masculin">masculin
+            <option value="feminin">féminin
+            </select>
+            </br>
+            
+            <label>Année de naissance* :</label>
+            <input type="int" name="user_date" id="user_date"  value="<%= user_date %>" MAXLENGTH=4 required>
+
+            <label>Adresse du domicile* :</label>
+            <input type="text" name="user_adress" id="user_adress" value="<%= user_adress %>" required>
+
+            <label>Numéro de contact* :</label>
+            <input type="text" name="num_contact" id="num_contact" value="<%= num_contact %>" MAXLENGTH=15 required>
+
+            <label >Section* :</label>
+            <SELECT name="id_fk_section" size="1">
+              <% listeSection.forEach(function(section) { %>
+
+              <OPTION value="<%= section.id_section %>"> <%= section.section_name %> </OPTION>
+
+              <% }); %>
+            </SELECT >
+          </br>
+
+            <button class="bouton_modifier" type="submit" value="save" >Valider la modification</button>
+            <!-- ______________________ Bouton de retour ______________________ --> 
+            <button> <a class="bouton_supprimer" href="/membre">Retour</a></button>
+      </form>
+
+
+    </main>
+</body>
+
+  <footer>
+      Site de l'unité Saint-Dominique - 106ième
+  </footer>
+</html>

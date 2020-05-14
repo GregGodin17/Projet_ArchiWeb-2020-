@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>106ième - Saint Dominique</title>
+  </head>
+
+<body class="container"></body>
+      
+    <header>
+        <%- include('./menu.ejs') %>
+    </header>
+
+    <main> 
+         <h2>Bonjour, souhaitez-vous nous contacter ? </h2>      
+        <hr size="1px">
+        <form class="formulaires" METHOD="POST" ENCTYPE="text/plain" ACTION="mailto:greg.godin@hotmail.com">
+          <h3>Veuillez remplir ce formulaire :</h3> 
+
+            <label >Nom* :</label>
+            <input type="text" name="lastname" required>
+            
+            <label >Prénom* :</label>
+            <input type="text" name="firstname" required>
+
+            <label >Numéro de contact :</label>
+            <input type="text" name="phone">
+
+            <label >Mail de contact* :</label>
+            <input type="email" name="email" required>
+
+            <label >Votre message* :</label>
+            <textarea type="text" name="message" placeholder="Ecrivez ici votre message !" required></textarea>
+          
+          <!-- ______________________ Bouton de validation d'envoi ______________________ --> 
+
+            <button class="bouton_modifier" type="submit" value="envoyer">Envoyer le formulaire de contact</button>
+
+      </form>
+    </main>
+</body>
+
+  <footer>
+      Site de l'unité Saint-Dominique - 106ième
+  </footer>
+</html>

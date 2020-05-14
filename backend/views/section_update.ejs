@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>106ième - Saint Dominique</title>
+  </head>
+
+<body class="container"></body>
+      
+    <header>
+        <%- include('./menu.ejs') %>
+    </header>
+    
+    <main> 
+         <h2>Modification des informations :</h2>      
+
+         <hr size="1px">
+            <!-- ______________________ Formulaire de modification d'une section ______________________ --> 
+        <form class="formulaires" action="/section/update/" method="POST"> 
+          
+            <input name="id_section" id="id_section" type="hidden" value="<%= id_section %>">
+
+            <label >Nom* :</label>
+            <input type="text" name="section_name" id="section_name" value="<%= section_name %>" required>
+
+            <label >Dates des réunions :</label>
+            <input type="text" name="dates_reunion" id="dates_reunion" value="<%= dates_reunion %>">
+
+            <button class="bouton_modifier" type="submit" value="save">Valider la modification</button>
+            <!-- ______________________ Bouton de retour ______________________ --> 
+            <button> <a class="bouton_supprimer" href="/section">Retour</a></button>
+      </form>
+
+
+    </main>
+</body>
+
+  <footer>
+      Site de l'unité Saint-Dominique - 106ième
+  </footer>
+</html>

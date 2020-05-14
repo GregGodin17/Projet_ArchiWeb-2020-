@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>106ième - Saint Dominique</title>
+  </head>
+
+<body class="container"></body>
+      
+    <header>
+        <%- include('./menu.ejs') %>
+    </header>
+
+    <main> 
+        <h2>Liste des sections : </h2>      
+     
+        <hr size="1px">
+      <!-- ______________________ Affichage des sections ______________________ -->  
+       <div class="Nom_titre"> <% listeSection.forEach(function(section) { %>
+        <%= section.section_name  %>
+      </div> 
+          
+      <!-- ______________________ Modification d'une section ______________________ -->    
+      </br>
+      <div class="bouton_membre">
+
+        <button>
+          <a class="bouton_modifier" href='/section/update/<%= section.id_section %>'>Modifier</a>
+        </button>
+
+      <!-- ______________________ Suppression d'une section ______________________ --> 
+        <button>
+          <a class="bouton_supprimer" onclick="if(confirm('Confirmer la suppression de <%= section.section_name %>  ?')) return true; else return false;"
+              href='/section/delete/<%= section.id_section %>'>Supprimer</a>
+        </button>
+        <hr class="barre_separation" size="1px">
+      </div>
+        <% }); %>
+
+        <!-- ______________________ Ajout d'une section ______________________ -->
+
+        <form class="formulaires" name="section_add" action="/section/add" method="POST">
+          <p>Ajouter une section : </p>
+          <input name="id_section" type="hidden">
+
+          <input type="text" name="section_name" placeholder="Nom de la section" required>
+
+          <input type="text" name="dates_reunion" placeholder="Dates de réunion" required>
+          
+        <div class="button">
+          <button class="bouton_modifier" type="submit" value="save">Valider l'ajout</button>
+        </div>
+    </form>
+    </main>
+</body>
+
+  <footer>
+      Site de l'unité Saint-Dominique - 106ième
+  </footer>
+</html>

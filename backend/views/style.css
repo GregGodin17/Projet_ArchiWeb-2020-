@@ -1,0 +1,163 @@
+:root {
+
+    --orange:#FF6600;
+    --bleu:#104386;
+    --bleuclair:rgb(66, 124, 241);
+    --beige:#E1D4C0;
+    --blanc:#F5EDE3;
+    --vert: rgba(0, 128, 0, 0.76);
+   
+    --length-M: 2rem;
+
+    --length-XS: calc(var(--length-S) / 2);
+    --length-S: calc(var(--length-M) / 2);
+    --length-L: calc(var(--length-M) * 2);
+    --length-XL: calc(var(--length-L) * 2);
+    
+    
+}
+
+/*Commun aux pages : */
+body{
+    margin-top: 3%;
+    margin-left: 7%;
+    margin-right: 7%;
+    font-family: Arial, sans-serif;
+    
+}
+
+header{
+    grid-area: header;    
+}
+
+main{
+    grid-area: main;
+    margin-top: 3%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+footer{
+    text-align: right;
+    font-size: small;
+    margin-top: 5%;
+    grid-area : footer;
+    margin-right: 3%;
+    
+}
+
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+	display: grid;
+	grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+/*formulaire d'inscription*/
+
+.formulaires {
+    width: 30%;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+label{
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    margin-bottom: var(--length-S);
+}
+
+input, textarea {
+    font: var(--length-S);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: var(--length-S);
+}
+
+input:hover, textarea:hover{
+    border: 2px solid black; 
+}
+
+input#user_gender.user_gender {
+    left: 0.5rem;
+    top: 0.2rem;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 0.05rem solid black;
+    background: white;
+    margin-bottom: var(--length-S);
+}
+/* Menu */
+
+#menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: var(--length-XS);
+    width: 80%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#menu li {
+    list-style-type: none;
+}
+
+#menu a {
+	border : 3px solid black;
+    padding: 0.7em 1.1em;
+    margin: 1%;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+#menu a:hover{
+	background-color:black;
+    color: white;
+    border : 3px solid white;
+}
+
+/* Boutons de la page membre.ejs (Espace Membre) et de la page section.ejs (Sections*/
+.bouton_addmembre{
+    position:absolute;
+    right:var(--length-XL);
+    text-decoration: none;
+    color: rgb(161, 149, 149);
+    color: var(--vert); 
+    margin-bottom: 100px;
+}
+
+.barre_separation{
+    border-style: dashed;
+    margin: var(--length-S) var(--length-S) var(--length-XS) var(--length-L);
+    width: 50%;
+    
+}
+
+.bouton_membre{
+	border-radius: var(--length-L);
+	border:none;
+    padding: var(--length-S);
+    text-decoration: none;
+}
+.bouton_membre a{
+    text-decoration: none;
+}
+.bouton_supprimer{
+    color: rgba(255, 0, 0, 0.466); 
+    margin-left: var(--length-XS);
+    margin-right: var(--length-XS);
+    text-decoration: none;
+}
+
+.bouton_modifier{
+    color: var(--vert); 
+}

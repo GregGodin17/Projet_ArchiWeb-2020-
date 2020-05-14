@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>106ième - Saint Dominique</title>
+  </head>
+
+<body class="container"></body>
+      
+    <header>
+        <%- include('./menu.ejs') %>
+    </header>
+    
+    <main> 
+         <h2>Inscription</h2>      
+
+         <hr size="1px">
+        <!-- ______________________ Formulaire d'inscription d'un membre ______________________ --> 
+        <form class="formulaires" name="formadd" action="/inscription/add" method="POST">
+          <h3>Veuillez entrer vos informations :</h3> 
+ 
+            <input name="id_membre" type="hidden">
+
+            <label >Nom* :</label>
+            <input type="text" name="user_lname" required>
+            
+            <label >Prénom* :</label>
+            <input type="text" name="user_fname" required>
+
+            <label >Genre* :</label>
+            <select name="user_gender" size="1" required>
+            <option value="masculin">masculin
+            <option value="feminin">féminin
+            </select>
+          </br>
+            
+            <label >Année de naissance* :</label>
+            <input type="int" name="user_date"  placeholder="ex: 2007" MAXLENGTH=4 required>
+
+            <label >Adresse du domicile* :</label>
+            <input type="text" name="user_adress" required>
+
+            <label >Numéro de contact* :</label>
+            <input type="tel" name="num_contact" placeholder="ex: +32495123456" MAXLENGTH=15 required>
+
+            <label >Section* :</label>
+            <SELECT name="id_fk_section" size="1">
+              <% listeSection.forEach(function(section) { %>
+
+              <OPTION value="<%= section.id_section %>"> <%= section.section_name %> </OPTION>
+
+              <% }); %>
+            </SELECT>
+          </br>
+          <!-- ______________________ Bouton de validation d'inscription ______________________ --> 
+
+            <button class="bouton_modifier" type="submit" value="save">Valider l'inscription</button>
+
+      </form>
+
+
+    </main>
+</body>
+
+  <footer>
+      Site de l'unité Saint-Dominique - 106ième
+  </footer>
+</html>
