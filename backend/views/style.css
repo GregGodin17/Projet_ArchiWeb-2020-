@@ -188,7 +188,7 @@ input#user_gender.user_gender {
 
 /* _______________Boutons de la page membre.ejs (Espace Membre) et de la page section.ejs (Sections*/
 .bouton_addmembre{
-    position:absolute;
+    position:fixed;
     right:15%;
     text-decoration: none;
     color: rgb(161, 149, 149);
