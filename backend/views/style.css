@@ -46,7 +46,7 @@ header{
 main{
     
     grid-area: main;
-
+    font-size: var(--length-S);
     margin: 23% 5% 0% 7%;
     padding: 0 3% 0 3%;
     border-radius: 5px;
@@ -56,7 +56,7 @@ main{
 
 footer{
     text-align: right;
-    font-size: small;
+    font-size: var(--length-S);
     grid-area : footer;
 
     margin: 0 5% 0 7%;
@@ -82,7 +82,7 @@ footer{
     margin-left: auto;
     margin-right: auto;
 }
-#menu {
+#menu ul{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: var(--length-XS);
@@ -92,11 +92,11 @@ footer{
     margin-bottom: 3%;
 }
 
-#menu li {
+#menu ul li {
     list-style-type: none;
 }
 
-#menu a {
+#menu ul a {
 	border : 3px solid black;
     padding: 0.7em 1.1em;
     margin: 1%;
@@ -108,7 +108,7 @@ footer{
 
 }
 
-#menu a:hover{
+#menu ul a:hover{
 	background-color:black;
     color: white;
     border : 3px solid white;
