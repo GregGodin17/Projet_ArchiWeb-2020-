@@ -6,6 +6,7 @@
     --beige:#E1D4C0;
     --blanc:#F5EDE3;
     --vert: rgba(0, 128, 0, 0.76);
+    --blancTransp:rgb(256, 256, 256, 0.7);
    
     --length-M: 2rem;
 
@@ -17,33 +18,50 @@
     
 }
 
-/*Commun aux pages : */
+/* ________________________________Commun aux pages : */
+html{
+    background-image: url(./Images/foret2.jpg);
+    background-repeat: no-repeat;
+    
+}
 body{
-    margin-top: 3%;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin:3% 7% 0% 5%;
     font-family: Arial, sans-serif;
     
 }
 
 header{
-    grid-area: header;    
+    grid-area: header; 
+    position: fixed;   
+    
+    width: 69%;
+
+    background-image: linear-gradient(to right, transparent 0%, var(--blancTransp) 1%, var(--blancTransp) 98%,transparent 99%);
+      
+    margin: -3% 7% 0 6%;
+    padding: 0% 6% 0% 3%;
+    border-radius: 5px;
 }
 
 main{
+    
     grid-area: main;
-    margin-top: 3%;
-    margin-left: 7%;
-    margin-right: 7%;
+
+    margin: 23% 5% 0% 7%;
+    padding: 0 3% 0 3%;
+    border-radius: 5px;
+    /*background-color: rgb(256, 256, 256, 0.5);*/
+    background-image: linear-gradient(to right, transparent 0%, var(--blancTransp) 1%, var(--blancTransp) 98%,transparent 99%);
 }
 
 footer{
     text-align: right;
     font-size: small;
-    margin-top: 5%;
     grid-area : footer;
-    margin-right: 3%;
-    
+
+    margin: 0 5% 0 7%;
+    padding: 0 4% 0 0;
+    background-image: linear-gradient(to right, transparent 0%, var(--blancTransp) 1%, var(--blancTransp) 98%,transparent 99%);
 }
 
 .container {
@@ -57,7 +75,80 @@ footer{
         "footer";
 }
 
-/*formulaire d'inscription*/
+/* ________________________________Menu */
+.logostdom{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: var(--length-XS);
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+#menu li {
+    list-style-type: none;
+}
+
+#menu a {
+	border : 3px solid black;
+    padding: 0.7em 1.1em;
+    margin: 1%;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    border-radius: var(--length-XS);
+
+}
+
+#menu a:hover{
+	background-color:black;
+    color: white;
+    border : 3px solid white;
+}
+.link{
+    color:black;
+    text-decoration: none;
+}
+/* ________________________________Page d'accueil   */
+.txt_intro{
+    text-align: center;
+}
+.tab_index tr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.tab_index td{
+    flex-wrap: wrap;
+}
+.tab_index td:hover{
+    transform: scale(1.6);
+}
+.img_index{
+    border-radius: 15px;
+}
+
+/*________________________________Page Contact*/
+.coordonees_contact{
+    position: fixed;
+    right: 15%;
+    width:25%;
+    border: 0 0 1% 1%;
+    border-left: solid grey;
+    border-bottom: solid grey;
+    border-radius: 0 0 0 5px ;
+    padding: 1%;
+    background-color: var(--blancTransp);
+}
+/*________________________________Page d'Inscription*/
 
 .formulaires {
     width: 30%;
@@ -94,51 +185,25 @@ input#user_gender.user_gender {
     background: white;
     margin-bottom: var(--length-S);
 }
-/* Menu */
 
-#menu {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: var(--length-XS);
-    width: 80%;
-    text-align: center;
-    margin-top: 5%;
-}
-
-#menu li {
-    list-style-type: none;
-}
-
-#menu a {
-	border : 3px solid black;
-    padding: 0.7em 1.1em;
-    margin: 1%;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: black;
-}
-
-#menu a:hover{
-	background-color:black;
-    color: white;
-    border : 3px solid white;
-}
-
-/* Boutons de la page membre.ejs (Espace Membre) et de la page section.ejs (Sections*/
+/* _______________Boutons de la page membre.ejs (Espace Membre) et de la page section.ejs (Sections*/
 .bouton_addmembre{
     position:absolute;
-    right:var(--length-XL);
+    right:15%;
     text-decoration: none;
     color: rgb(161, 149, 149);
     color: var(--vert); 
-    margin-bottom: 100px;
+    margin-left: 5%;
+    border: solid;
+    margin-top: 1%;
+    border-radius: 5px;
+    padding: 1%;
+    background: var(--blancTransp);
 }
 
 .barre_separation{
-    border-style: dashed;
     margin: var(--length-S) var(--length-S) var(--length-XS) var(--length-L);
-    width: 50%;
+    width: 200px;
     
 }
 
@@ -160,4 +225,24 @@ input#user_gender.user_gender {
 
 .bouton_modifier{
     color: var(--vert); 
+}
+
+/* ________________________________Page Sections */
+
+.affichage_section{
+
+    width:55%;
+    margin-right: 20%;
+}
+
+.form_add_section{
+    position: fixed;
+    right: 15%;
+    width:25%;
+    border: 0 0 1% 1%;
+    border-left: solid grey;
+    border-bottom: solid grey;
+    border-radius: 0 0 0 5px ;
+    padding: 1%;
+    
 }

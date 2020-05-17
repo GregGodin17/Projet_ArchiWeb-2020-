@@ -6,7 +6,7 @@
     <title>106ième - Saint Dominique</title>
   </head>
 
-<body class="container"></body>
+<body class="container">
       
     <header>
         <%- include('./menu.ejs') %>
@@ -23,26 +23,26 @@
             <input name="id_membre" type="hidden">
 
             <label >Nom* :</label>
-            <input type="text" name="user_lname" required>
+            <input type="text" name="user_lname" required autofocus>
             
             <label >Prénom* :</label>
-            <input type="text" name="user_fname" required>
+            <input type="text" name="user_fname" required autofocus>
 
             <label >Genre* :</label>
-            <select name="user_gender" size="1" required>
+            <select name="user_gender" size="1" required autofocus>
             <option value="masculin">masculin
             <option value="feminin">féminin
             </select>
           </br>
             
             <label >Année de naissance* :</label>
-            <input type="int" name="user_date"  placeholder="ex: 2007" MAXLENGTH=4 required>
+            <input type="int" name="user_date"  placeholder="ex: 2007" MAXLENGTH=4 required autofocus>
 
             <label >Adresse du domicile* :</label>
-            <input type="text" name="user_adress" required>
+            <input type="text" name="user_adress" required autofocus>
 
             <label >Numéro de contact* :</label>
-            <input type="tel" name="num_contact" placeholder="ex: +32495123456" MAXLENGTH=15 required>
+            <input type="tel" name="num_contact" placeholder="ex: +32495123456" MAXLENGTH=15 required autofocus>
 
             <label >Section* :</label>
             <SELECT name="id_fk_section" size="1">

@@ -16,8 +16,24 @@
         <h2>Liste des sections : </h2>      
      
         <hr size="1px">
+          <!-- ______________________ Ajout d'une section ______________________ -->
+      <div class="form_add_section">
+        <form name="section_add" action="/section/add" method="POST">
+          <p>Ajouter une section : </p>
+          <input name="id_section" type="hidden">
+
+          <input type="text" name="section_name" placeholder="Nom de la section" required autofocus>
+
+          <input type="text" name="dates_reunion" placeholder="Dates de réunion" required autofocus>
+          
+        <div class="button">
+          <button class="bouton_modifier" type="submit" value="save">Valider l'ajout</button>
+        </div>
+    </form>
+  </div>
       <!-- ______________________ Affichage des sections ______________________ -->  
-       <div class="Nom_titre"> <% listeSection.forEach(function(section) { %>
+     <div class="affichage_section">  
+      <div class="Nom_titre"> <% listeSection.forEach(function(section) { %>
         <%= section.section_name  %>
       </div> 
           
@@ -34,24 +50,12 @@
           <a class="bouton_supprimer" onclick="if(confirm('Confirmer la suppression de <%= section.section_name %>  ?')) return true; else return false;"
               href='/section/delete/<%= section.id_section %>'>Supprimer</a>
         </button>
+      </div>   
         <hr class="barre_separation" size="1px">
-      </div>
+     
         <% }); %>
-
-        <!-- ______________________ Ajout d'une section ______________________ -->
-
-        <form class="formulaires" name="section_add" action="/section/add" method="POST">
-          <p>Ajouter une section : </p>
-          <input name="id_section" type="hidden">
-
-          <input type="text" name="section_name" placeholder="Nom de la section" required>
-
-          <input type="text" name="dates_reunion" placeholder="Dates de réunion" required>
-          
-        <div class="button">
-          <button class="bouton_modifier" type="submit" value="save">Valider l'ajout</button>
-        </div>
-    </form>
+      </div>
+      
     </main>
 </body>
 
